@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 
-
+//we will make the data of the matrice a double but we can change it to anything we want in the future
 typedef double T;
 
 class Matrix{
@@ -20,9 +20,12 @@ class Matrix{
     int matrixGetRow();
     int matrixGetCol();
     int matrixGetSize();
-
-    //Matrix operations
+    Matrix operator+(Matrix& A);
+    //Matrix gets and sets
 };
+
+/*
+int* createNullArray(const int a,const int b);
 
 int Matrix::matrixGetSize(){
     return elements;
@@ -69,3 +72,16 @@ void Matrix::matrixShow(){
 T Matrix::matrixGetData(const int m,const int n){
     return data[m][n];
 }
+*/
+
+/*
+Matrix Matrix:: operator+(Matrix& A){
+    Matrix* result = new Matrix(A.matrixGetRow(),A.matrixGetRow(),nullptr);
+    for(int i=result->matrixGetRow();0<i;i++){
+        for(int j=result->matrixGetCol();0<j;j++){
+            result->data[i][j]=A.data[i][j]+this->data[i][j];
+        }
+    }
+    return *result;
+}
+*/
