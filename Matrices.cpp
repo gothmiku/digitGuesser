@@ -2,8 +2,8 @@
 #include "Matrices.h"
 
 //test
-int* createNullArray(const int a,const int b){
-    int* result = new int[a*b];
+T* createNullArray(const int a,const int b){
+    T* result = new T[a*b];
     return result;
 }
 

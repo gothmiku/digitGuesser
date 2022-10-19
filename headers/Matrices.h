@@ -10,20 +10,22 @@ class Matrix{
     int row;
     int col;
     int elements;
-    T** data;
+    
 
     public:
     //Constructor,logging and gets
+    T** data;
     Matrix(int row,int col,const T* inputData);
     void matrixShow();
     T matrixGetData(const int m,const int n);
     int matrixGetRow();
     int matrixGetCol();
     int matrixGetSize();
-    Matrix operator+(Matrix& A);
+    //Matrix operator+(Matrix& A);
     //Matrix gets and sets
 };
 
+T* createNullArray(const int a,const int b);
 /*
 int* createNullArray(const int a,const int b);
 
