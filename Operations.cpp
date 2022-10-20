@@ -43,13 +43,25 @@ Matrix transpose(Matrix A){
 }
 
 Matrix addScalar(Matrix A,const T scaValue){
-    //will do
+    Matrix* result = new Matrix(A.matrixGetRow(),A.matrixGetCol(),A.matrixGetDataArray());
+    for(int m=0;m<A.matrixGetRow();m++){
+        for(int n=0;n<A.matrixGetCol();n++){
+            result->data[m][n]=A.data[m][n]+scaValue;
+        }
+    }
+    return *result;
 }
 
 Matrix scale(Matrix A,const T scaValue){
-    //will do
+    Matrix* result = new Matrix(A.matrixGetRow(),A.matrixGetCol(),A.matrixGetDataArray());
+    for(int m=0;m<A.matrixGetRow();m++){
+        for(int n=0;n<A.matrixGetCol();n++){
+            result->data[m][n]=A.data[m][n]*scaValue;
+        }
+    }
+    return *result;
 }
 
 Matrix dotProd(Matrix A,Matrix B){
-    
+    //i will do
 }

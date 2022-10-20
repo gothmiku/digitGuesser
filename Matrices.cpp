@@ -2,8 +2,8 @@
 #include "Matrices.h"
 
 //test
-T* createNullArray(const int a,const int b){
-    T* result = new T[a*b];
+T* createNullArray(Matrix A){
+    T* result = new T[A.matrixGetSize()];
     return result;
 }
 
@@ -48,6 +48,15 @@ void Matrix::matrixShow(){
     }
 }
 
+T* Matrix::matrixGetDataArray(){
+    T* A = new T[this->matrixGetSize()];
+    for(int i=0;i<this->matrixGetRow();i++){
+        for(int j=0;j<this->matrixGetCol();j++){
+            A[i+j]=this->matrixGetData(i,j);
+        }
+    }
+    return A;
+}
 //gets the data of the matrix by using integers for parameters
 T Matrix::matrixGetData(const int m,const int n){
     return data[m][n];
