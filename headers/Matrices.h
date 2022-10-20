@@ -21,6 +21,7 @@ class Matrix{
     int matrixGetRow();
     int matrixGetCol();
     int matrixGetSize();
+    T* matrixGetDataArray();
     //Matrix operator+(Matrix& A);
     //Matrix gets and sets
 };
