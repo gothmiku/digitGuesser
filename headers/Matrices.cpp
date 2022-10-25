@@ -2,8 +2,8 @@
 #include "Matrices.h"
 
 //test
-T* createNullArray(Matrix A){
-    T* result = new T[A.matrixGetSize()];
+T* createNullArray(const int a){
+    T* result = new T[a];
     return result;
 }
 
@@ -60,19 +60,4 @@ T* Matrix::matrixGetDataArray(){
 //gets the data of the matrix by using integers for parameters
 T Matrix::matrixGetData(const int m,const int n){
     return data[m][n];
-}
-
-int main(){
-    double A[9]={1.2,1.5,6.9,3.1,1.86,12.54,23.1,1.111,2.1957};
-    double* B=new double[9];
-    for(int i=0;i<9;i++){
-        B[i]=A[i]*2;
-    }
-
-    Matrix *example = new Matrix(3,3,A);
-    Matrix *example2 = new Matrix(3,3,B);
-    example->matrixShow();
-    std::cout << example->matrixGetRow();
-
-    return 0;
 }

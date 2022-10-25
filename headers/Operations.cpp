@@ -12,8 +12,8 @@ bool dimensionCheck(Matrix A,Matrix B){
     }
  }
 
-Matrix add(Matrix A, Matrix B){
-    Matrix* result = new Matrix(A.matrixGetRow(),A.matrixGetCol(),createNullArray(A.matrixGetRow(),A.matrixGetCol()));
+Matrix* add(Matrix A, Matrix B){
+    Matrix* result = new Matrix(A.matrixGetRow(),A.matrixGetCol(),createNullArray(A.matrixGetSize()));
     if(dimensionCheck(A,B)){
         for(int m=0;m<A.matrixGetRow();m++){
             for(int n=0;n<A.matrixGetCol();n++){
@@ -21,10 +21,11 @@ Matrix add(Matrix A, Matrix B){
             }
         }
     }
+    return result;
 }
 
-Matrix substract(Matrix A, Matrix B){
-    Matrix* result = new Matrix(A.matrixGetRow(),A.matrixGetCol(),createNullArray(A.matrixGetRow(),A.matrixGetCol()));
+Matrix* substract(Matrix A, Matrix B){
+    Matrix* result = new Matrix(A.matrixGetRow(),A.matrixGetCol(),createNullArray(A.matrixGetSize()));
     if(dimensionCheck(A,B)){
         for(int m=0;m<A.matrixGetRow();m++){
             for(int n=0;n<A.matrixGetCol();n++){
@@ -32,8 +33,33 @@ Matrix substract(Matrix A, Matrix B){
             }
         }
     }
+    return result;
 }
 
+
+Matrix* addScalar(Matrix A,const T scaValue){
+    Matrix* result = new Matrix(A.matrixGetRow(),A.matrixGetCol(),A.matrixGetDataArray());
+    for(int m=0;m<A.matrixGetRow();m++){
+        for(int n=0;n<A.matrixGetCol();n++){
+            result->data[m][n]=A.data[m][n]+scaValue;
+        }
+    }
+    return result;
+}
+
+Matrix* scale(Matrix A,const T scaValue){
+    Matrix* result = new Matrix(A.matrixGetRow(),A.matrixGetCol(),A.matrixGetDataArray());
+    for(int m=0;m<A.matrixGetRow();m++){
+        for(int n=0;n<A.matrixGetCol();n++){
+            result->data[m][n]=A.data[m][n]*scaValue;
+        }
+    }
+    return result;
+}
+/*
+Matrix dotProd(Matrix A,Matrix B){
+    //i will do
+}
 Matrix multiply(Matrix A,Matrix B){
     //i forgot how we multiplied
 }
@@ -41,27 +67,4 @@ Matrix multiply(Matrix A,Matrix B){
 Matrix transpose(Matrix A){
     //i forgot how to transpose
 }
-
-Matrix addScalar(Matrix A,const T scaValue){
-    Matrix* result = new Matrix(A.matrixGetRow(),A.matrixGetCol(),A.matrixGetDataArray());
-    for(int m=0;m<A.matrixGetRow();m++){
-        for(int n=0;n<A.matrixGetCol();n++){
-            result->data[m][n]=A.data[m][n]+scaValue;
-        }
-    }
-    return *result;
-}
-
-Matrix scale(Matrix A,const T scaValue){
-    Matrix* result = new Matrix(A.matrixGetRow(),A.matrixGetCol(),A.matrixGetDataArray());
-    for(int m=0;m<A.matrixGetRow();m++){
-        for(int n=0;n<A.matrixGetCol();n++){
-            result->data[m][n]=A.data[m][n]*scaValue;
-        }
-    }
-    return *result;
-}
-
-Matrix dotProd(Matrix A,Matrix B){
-    //i will do
-}
+*/

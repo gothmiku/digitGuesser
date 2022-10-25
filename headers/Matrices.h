@@ -4,6 +4,8 @@
 //we will make the data of the matrice a double but we can change it to anything we want in the future
 typedef double T;
 
+T* createNullArray(const int a);
+
 class Matrix{
     //Artributes of a matrix
     private:
@@ -26,7 +28,7 @@ class Matrix{
     //Matrix gets and sets
 };
 
-T* createNullArray(const int a,const int b);
+
 /*
 int* createNullArray(const int a,const int b);
 
