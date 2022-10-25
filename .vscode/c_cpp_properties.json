@@ -3,8 +3,13 @@
         {
             "name": "Win32",
             "includePath": [
+                "${workspaceFolder}/headers/**",
                 "${workspaceFolder}/**"
             ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename" : ""
+            },
             "defines": [
                 "_DEBUG",
                 "UNICODE",
