@@ -4,3 +4,6 @@ The objective of this project is to lay down the foundations of our first neural
 
 To-do list
 * Finish the operations functions
+* Add a mspaint like drawboard
+* Add the neural network 
+* Train the neural network
