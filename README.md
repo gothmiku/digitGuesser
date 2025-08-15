@@ -7,3 +7,5 @@ To-do list
 * Add a mspaint like drawboard
 * Add the neural network 
 * Train the neural network
+
+Status: Discontinued
